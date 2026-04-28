@@ -91,7 +91,7 @@ const CVModal = ({ isOpen, onClose }) => {
                   <img src="/Nathan.jpeg" alt="NATHAN" className="w-full h-full object-cover" />
                 </div>
                 <div className="text-center md:text-left">
-                  <h1 className="text-3xl md:text-4xl font-serif tracking-tighter uppercase mb-1">NATHAN</h1>
+                  <h1 className="text-3xl md:text-4xl font-serif tracking-tighter uppercase mb-1">Sultan malik ahmad</h1>
                   <p className="text-gray-400 font-sans uppercase tracking-[0.4em] text-[10px] font-black">Junior Coder</p>
                 </div>
               </div>

@@ -30,7 +30,7 @@ const About = () => {
             {/* Floating label */}
             <div className="absolute -bottom-6 -right-6 hidden md:block">
               <h3 className="text-2xl font-sans font-bold uppercase tracking-[0.5em] text-white opacity-20">
-                NATHAN
+                SULTAN MALIK AHMAD
               </h3>
             </div>
           </div>

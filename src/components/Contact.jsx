@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setResult("Mengirim....");
+    
+    const formData = new FormData(event.target);
+
+    // Masukkan Access Key Anda di sini setelah mendapatkannya dari web3forms.com
+    formData.append("access_key", "5af4ca9c-3510-4fc7-b6aa-ef0ac577c6d8");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Pesan Berhasil Terkirim!");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+    setIsSubmitting(false);
+  };
+
   return (
     <section id="contact" className="min-h-screen pt-48 pb-16 px-6 lg:px-12 bg-[#0a0a0a] text-[#fdfdfd] relative overflow-hidden flex flex-col justify-between">
       
@@ -47,33 +77,45 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={onSubmit}
           >
             <div className="relative group">
-              <input type="text" required className="w-full bg-transparent border-b border-gray-800 py-4 text-xl md:text-2xl focus:outline-none focus:border-white transition-all text-white placeholder-transparent peer" id="name" placeholder="Nama" />
+              <input type="text" name="name" required className="w-full bg-transparent border-b border-gray-800 py-4 text-xl md:text-2xl focus:outline-none focus:border-white transition-all text-white placeholder-transparent peer" id="name" placeholder="Nama" />
               <label htmlFor="name" className="absolute left-0 top-4 text-gray-600 text-xl transition-all peer-placeholder-shown:text-xl peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-[0.4em] peer-focus:text-gray-400">Nama Lengkap</label>
             </div>
 
             <div className="relative group">
-              <input type="email" required className="w-full bg-transparent border-b border-gray-800 py-4 text-xl md:text-2xl focus:outline-none focus:border-white transition-all text-white placeholder-transparent peer" id="email" placeholder="Email" />
+              <input type="email" name="email" required className="w-full bg-transparent border-b border-gray-800 py-4 text-xl md:text-2xl focus:outline-none focus:border-white transition-all text-white placeholder-transparent peer" id="email" placeholder="Email" />
               <label htmlFor="email" className="absolute left-0 top-4 text-gray-600 text-xl transition-all peer-placeholder-shown:text-xl peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-[0.4em] peer-focus:text-gray-400">Alamat Email</label>
             </div>
 
             <div className="relative group">
-              <textarea rows="3" required className="w-full bg-transparent border-b border-gray-800 py-4 text-xl md:text-2xl focus:outline-none focus:border-white transition-all text-white placeholder-transparent peer resize-none" id="message" placeholder="Pesan"></textarea>
+              <textarea name="message" rows="3" required className="w-full bg-transparent border-b border-gray-800 py-4 text-xl md:text-2xl focus:outline-none focus:border-white transition-all text-white placeholder-transparent peer resize-none" id="message" placeholder="Pesan"></textarea>
               <label htmlFor="message" className="absolute left-0 top-4 text-gray-600 text-xl transition-all peer-placeholder-shown:text-xl peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-[0.4em] peer-focus:text-gray-400">Ceritakan Proyek Anda</label>
             </div>
 
-            <motion.button 
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative self-start px-12 py-6 overflow-hidden border border-gray-800"
-            >
-              <span className="relative z-10 text-[10px] font-bold uppercase tracking-[0.5em] group-hover:text-black transition-colors duration-500">Kirim Sekarang</span>
-              <motion.div 
-                className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16, 1, 0.3, 1]"
-              />
-            </motion.button>
+            <div className="flex flex-col gap-4">
+              <motion.button 
+                type="submit"
+                disabled={isSubmitting}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className={`group relative self-start px-12 py-6 overflow-hidden border border-gray-800 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                <span className="relative z-10 text-[10px] font-bold uppercase tracking-[0.5em] group-hover:text-black transition-colors duration-500">
+                  {isSubmitting ? 'Mengirim...' : 'Kirim Sekarang'}
+                </span>
+                <motion.div 
+                  className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16, 1, 0.3, 1]"
+                />
+              </motion.button>
+              
+              {result && (
+                <p className={`text-xs font-bold uppercase tracking-[0.2em] ${result.includes('Berhasil') ? 'text-green-500' : 'text-red-500'}`}>
+                  {result}
+                </p>
+              )}
+            </div>
           </motion.form>
         </div>
       </div>
@@ -87,3 +129,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
