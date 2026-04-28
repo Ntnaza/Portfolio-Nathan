@@ -20,7 +20,7 @@ const projects = [
     id: '03', 
     title: 'ORGANISASI', 
     type: 'EKOSISTEM',
-    image: 'https://images.unsplash.com/photo-1635241161466-541f065683cb?q=80&w=1200&auto=format&fit=crop',
+    image: '/oska.jpeg',
     links: { demo: 'https://oska.smakniscjr.sch.id', code: '#' }
   },
 ];
