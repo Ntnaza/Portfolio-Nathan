@@ -6,14 +6,14 @@ const projects = [
     id: '01', 
     title: 'LAUNDRY', 
     type: 'SITUS WEB',
-    image: 'public/laundrykuyhp.jpeg',
+    image: '/laundrykuyhp.jpeg',
     links: { demo: 'https://Laundrykuy.hexanusa.com', code: '#' }
   },
   { 
     id: '02', 
     title: 'PROFIL', 
     type: 'IDENTITAS',
-    image: 'public/hexanusahp.jpeg',
+    image: '/hexanusahp.jpeg',
     links: { demo: 'https://hexanusa.com', code: '#' }
   },
   { 

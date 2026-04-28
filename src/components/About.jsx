@@ -21,7 +21,7 @@ const About = () => {
             <div className="aspect-[3/4] overflow-hidden bg-gray-900 border border-gray-800 relative">
               <motion.img 
                 style={{ y: imgY, scale: 1.2 }}
-                src="public/Nathan.jpeg" 
+                src="/Nathan.jpeg" 
                 alt="Profil Nathan" 
                 className="w-full h-full object-cover grayscale contrast-125 opacity-60 group-hover:opacity-100 transition-all duration-1000"
               />
