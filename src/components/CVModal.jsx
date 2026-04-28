@@ -88,7 +88,7 @@ const CVModal = ({ isOpen, onClose }) => {
             <aside className="w-[35%] bg-[#f9fafb] p-8 md:p-10 border-r border-gray-100 flex flex-col gap-10 print-sidebar">
               <div className="flex flex-col items-center md:items-start gap-8">
                 <div className="w-32 h-32 md:w-36 md:h-36 bg-white rounded-2xl overflow-hidden shadow-sm border-4 border-white">
-                  <img src="/nathan.jpeg" alt="nathan" className="w-full h-full object-cover" />
+                  <img src="/Nathan.jpeg" alt="NATHAN" className="w-full h-full object-cover" />
                 </div>
                 <div className="text-center md:text-left">
                   <h1 className="text-3xl md:text-4xl font-serif tracking-tighter uppercase mb-1">Sultan malik ahmad</h1>

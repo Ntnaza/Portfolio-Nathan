@@ -61,8 +61,6 @@ const ProjectCard = ({ project, scrollYProgress }) => {
           alt={project.title} 
           className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 ease-out"
         />
-        {/* Decorative Overlay */}
-        <div className="absolute inset-0 border-[20px] border-[#0a0a0a] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
       </div>
     </div>
   );
