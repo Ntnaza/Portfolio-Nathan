@@ -7,25 +7,25 @@ const Experience = () => {
   const timeline = [
     {
       company: 'Proyek Mandiri',
-      year: '2025 — SEKARANG',
+      year: '2023 — SEKARANG',
       role: 'Full Stack Developer',
       desc: 'Fokus pada pengembangan ekosistem web modern dan optimasi kode murni untuk solusi digital yang skalabel.',
     },
     {
       company: 'Teaching Factory',
-      year: '2024 — 2025',
+      year: '2025 — 2026',
       role: 'Technical Lead / Developer',
       desc: 'Bekerja dalam simulasi lingkungan industri di sekolah, menyelesaikan proyek nyata dari klien dengan standar profesional.',
     },
     {
       company: 'Organisasi SMK',
-      year: '2022 — 2024',
+      year: '2023 — 2025',
       role: 'Pengurus Inti (2 Periode)',
       desc: 'Mengelola koordinasi tim, mengorganisir berbagai acara besar, dan melatih kemampuan komunikasi serta kepemimpinan antar angkatan.',
     },
     {
       company: 'Portofolio Akademik',
-      year: '2022 — 2025',
+      year: '2022 — 2026',
       role: 'Junior Coder',
       desc: 'Membangun fondasi logika pemrograman dan menyelesaikan berbagai proyek studi kasus berbasis web dan data.',
     },

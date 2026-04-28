@@ -76,9 +76,7 @@ const About = () => {
                     </div>
                   </div>
                   
-                  <p className="font-sans text-gray-400 leading-relaxed font-light">
-                    Berfokus pada pengembangan web Full Stack dengan ketertarikan mendalam pada interaksi pengguna dan efisiensi kode.
-                  </p>
+              
                 </div>
 
                 <div className="space-y-12">

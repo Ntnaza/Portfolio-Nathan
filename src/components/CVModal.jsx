@@ -28,7 +28,7 @@ const CVModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const skills = [
-    "React.js", "Node.js", "Tailwind CSS", "Laravel", "MySQL", "Git"
+    "React.js", "Tailwind CSS", "Laravel", "MySQL", "Git"
   ];
 
   const projects = [
@@ -40,19 +40,19 @@ const CVModal = ({ isOpen, onClose }) => {
   const experience = [
     {
       company: 'Proyek Mandiri',
-      year: '2025 — SKRG',
+      year: '2023 — SEKARANG',
       role: 'Full Stack Developer',
       desc: 'Pengembangan ekosistem web modern dan optimasi kode.',
     },
     {
       company: 'Teaching Factory',
-      year: '2024 — 2025',
+      year: '2025 — 2026',
       role: 'Technical Lead',
-      desc: 'Memimpin tim dalam proyek nyata klien standar industri.',
+      desc: 'Bekerja sama dalam sebuah tim dalam proyek nyata klien standar industri mengembangkan website sekolah Sistem Informasi akademik (SIMAK).',
     },
     {
       company: 'Organisasi SMK',
-      year: '2022 — 2024',
+      year: '2023 — 2025',
       role: 'Pengurus Inti',
       desc: 'Mengelola koordinasi tim dan acara besar sekolah.',
     }
@@ -88,7 +88,7 @@ const CVModal = ({ isOpen, onClose }) => {
             <aside className="w-[35%] bg-[#f9fafb] p-8 md:p-10 border-r border-gray-100 flex flex-col gap-10 print-sidebar">
               <div className="flex flex-col items-center md:items-start gap-8">
                 <div className="w-32 h-32 md:w-36 md:h-36 bg-white rounded-2xl overflow-hidden shadow-sm border-4 border-white">
-                  <img src="/Nathan.jpeg" alt="NATHAN" className="w-full h-full object-cover grayscale contrast-125" />
+                  <img src="/Nathan.jpeg" alt="NATHAN" className="w-full h-full object-cover" />
                 </div>
                 <div className="text-center md:text-left">
                   <h1 className="text-3xl md:text-4xl font-serif tracking-tighter uppercase mb-1">NATHAN</h1>
@@ -97,7 +97,7 @@ const CVModal = ({ isOpen, onClose }) => {
               </div>
 
               <section className="space-y-6">
-                <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 border-b border-gray-200 pb-2">Kontak & Bio</h2>
+                <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-black border-b border-gray-200 pb-2">Kontak & Bio</h2>
                 <div className="space-y-4 text-[11px] text-gray-600 font-medium">
                   <div>
                     <p className="text-gray-400 uppercase text-[8px] mb-1">Kelahiran</p>
@@ -111,11 +111,15 @@ const CVModal = ({ isOpen, onClose }) => {
                     <p className="text-gray-400 uppercase text-[8px] mb-1">Alamat</p>
                     <p className="leading-relaxed">Jl. Nasional III 47, Selajambe, Sukaluyu, Cianjur, 43284</p>
                   </div>
+                  <div>
+                    <p className="text-gray-400 uppercase text-[8px] mb-1">Website</p>
+                    <p className="leading-relaxed">portfolio-nathan-nine-vercel.app</p>
+                  </div>
                 </div>
               </section>
 
               <section className="space-y-6">
-                <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 border-b border-gray-200 pb-2">Keahlian</h2>
+                <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-black border-b border-gray-200 pb-2">Keahlian</h2>
                 <div className="flex flex-wrap gap-2">
                   {skills.map(skill => (
                     <span key={skill} className="px-2.5 py-1.5 bg-white text-[9px] font-bold uppercase tracking-wider rounded border border-gray-100 shadow-sm">
@@ -126,11 +130,11 @@ const CVModal = ({ isOpen, onClose }) => {
               </section>
 
               <section className="space-y-6">
-                <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 border-b border-gray-200 pb-2">Pendidikan</h2>
+                <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-black border-b border-gray-200 pb-2">Pendidikan</h2>
                 <div className="space-y-1">
                   <h3 className="font-serif text-lg leading-tight">SMK Nurul Islam Cianjur</h3>
-                  <p className="text-[9px] font-black text-gray-900 uppercase tracking-tighter">PPLG (RPL)</p>
-                  <p className="text-[9px] text-gray-400 font-mono">2022 — 2025</p>
+                  <p className="text-[9px] font-black text-gray-900 uppercase tracking-tighter">Pengembangan Perangkat Lunak dan Gim (PPLG)</p>
+                  <p className="text-[9px] text-gray-400 font-mono">2023 — 2026</p>
                 </div>
               </section>
             </aside>
@@ -138,24 +142,24 @@ const CVModal = ({ isOpen, onClose }) => {
             {/* RIGHT COLUMN */}
             <main className="w-[65%] p-8 md:p-14 bg-white print-main">
               <section className="mb-12">
-                <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 mb-6 flex items-center gap-4">
-                  <span className="w-12 h-px bg-gray-100"></span> Profil Profesional
+                <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-black mb-6 flex items-center gap-4">
+                  <span className="w-12 h-px bg-gray-200"></span> Profil
                 </h2>
                 <p className="font-sans text-gray-700 leading-relaxed text-base font-light italic">
-                  Lulusan baru dengan dedikasi tinggi dalam membangun aplikasi web yang efisien. Terampil dalam ekosistem JavaScript modern dengan kemampuan menyatukan logika presisi dan estetika digital yang bermakna.
+                  "Lulusan baru dengan minat besar pada pengembangan web. Memiliki Sedikit pemahaman dalam menggunakan React.js dan Laravel melalui pengerjaan proyek sekolah dan mandiri. Selalu antusias untuk belajar teknologi baru dan siap berkembang bersama tim."
                 </p>
               </section>
 
               <section className="mb-12">
-                <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 mb-6 flex items-center gap-4">
-                  <span className="w-12 h-px bg-gray-100"></span> Pengalaman Terpilih
+                <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-black mb-6 flex items-center gap-4">
+                  <span className="w-12 h-px bg-gray-200"></span> Pengalaman
                 </h2>
                 <div className="space-y-8">
                   {experience.map((exp, index) => (
                     <div key={index}>
                       <div className="flex justify-between items-baseline mb-1">
                         <h3 className="font-serif text-xl border-l-4 border-black pl-3">{exp.company}</h3>
-                        <span className="text-[9px] font-black text-gray-300 uppercase tracking-widest">{exp.year}</span>
+                        <span className="text-[9px] font-black text-black uppercase tracking-widest">{exp.year}</span>
                       </div>
                       <p className="text-[10px] text-gray-900 mb-2 font-bold uppercase tracking-wider">{exp.role}</p>
                       <p className="text-[11px] text-gray-500 leading-relaxed font-light">{exp.desc}</p>
@@ -165,13 +169,13 @@ const CVModal = ({ isOpen, onClose }) => {
               </section>
 
               <section>
-                <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 mb-6 flex items-center gap-4">
-                  <span className="w-12 h-px bg-gray-100"></span> Katalog Karya
+                <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-black mb-6 flex items-center gap-4">
+                  <span className="w-12 h-px bg-gray-200"></span> Katalog Karya
                 </h2>
                 <div className="grid grid-cols-1 gap-3">
                   {projects.map((proj, index) => (
                     <div key={index} className="p-4 border border-gray-100 rounded-xl bg-gray-50">
-                      <h3 className="font-serif text-base mb-1">{proj.title}</h3>
+                      <h3 className="font-serif text-black mb-1">{proj.title}</h3>
                       <p className="text-[8px] text-gray-400 uppercase font-black mb-1 tracking-tighter">{proj.type}</p>
                       <p className="text-[9px] text-gray-400 font-mono truncate">{proj.link}</p>
                     </div>
