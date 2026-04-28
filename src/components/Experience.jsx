@@ -49,16 +49,17 @@ const Experience = () => {
                 className="border-b border-gray-100 group"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => setHoveredIndex(hoveredIndex === index ? null : index)}
               >
-                <div className="py-12 md:py-20 flex flex-col">
+                <div className="py-10 md:py-20 flex flex-col cursor-pointer lg:cursor-default">
                   
                   <div className="flex flex-col lg:flex-row lg:items-center justify-between transition-all duration-500">
-                    <div className="flex items-center gap-8 md:gap-16">
-                      <span className="font-mono text-xs text-gray-300">0{index + 1}</span>
+                    <div className="flex items-center gap-6 md:gap-16">
+                      <span className="font-mono text-[10px] md:text-xs text-gray-300">0{index + 1}</span>
                       <motion.h3 
-                        className={`text-5xl md:text-7xl lg:text-9xl font-serif tracking-tighter leading-none`}
+                        className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-serif tracking-tighter leading-none"
                         animate={{ 
-                          x: isHovered ? 40 : 0,
+                          x: isHovered && window.innerWidth > 768 ? 40 : 0,
                           color: isHovered ? "#0a0a0a" : "#e5e5e5"
                         }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -67,7 +68,7 @@ const Experience = () => {
                       </motion.h3>
                     </div>
 
-                    <span className="font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400 mt-8 lg:mt-0">
+                    <span className="font-sans text-[8px] md:text-[10px] font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] text-gray-400 mt-6 lg:mt-0">
                       {item.year}
                     </span>
                   </div>
@@ -81,14 +82,14 @@ const Experience = () => {
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="pt-12 pl-12 md:pl-48 flex flex-col md:flex-row gap-8 md:gap-32 items-start">
+                        <div className="pt-8 md:pt-12 pl-10 md:pl-48 flex flex-col md:flex-row gap-8 md:gap-32 items-start">
                           <div className="max-w-xs">
-                            <h4 className="font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400 mb-4">Peran</h4>
-                            <p className="font-serif text-xl">{item.role}</p>
+                            <h4 className="font-sans text-[8px] md:text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400 mb-4">Peran</h4>
+                            <p className="font-serif text-lg md:text-xl">{item.role}</p>
                           </div>
                           <div className="max-w-md">
-                            <h4 className="font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400 mb-4">Kontribusi</h4>
-                            <p className="font-sans text-gray-500 font-light leading-relaxed">{item.desc}</p>
+                            <h4 className="font-sans text-[8px] md:text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400 mb-4">Kontribusi</h4>
+                            <p className="font-sans text-xs md:text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
                           </div>
                         </div>
                       </motion.div>

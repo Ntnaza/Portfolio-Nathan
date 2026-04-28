@@ -71,20 +71,21 @@ const Expertise = () => {
   const currentLyric = [...lyrics].reverse().find(lyric => currentTime >= lyric.time) || lyrics[0];
 
   return (
-    <section id="expertise" className="min-h-screen bg-[#0a0a0a] text-[#fdfdfd] relative flex flex-col items-center justify-center py-48 px-6 overflow-hidden border-t border-gray-900">
+    <section id="expertise" className="min-h-screen bg-[#0a0a0a] text-[#fdfdfd] relative flex flex-col items-center justify-center py-32 md:py-48 px-6 overflow-hidden border-t border-gray-900">
       
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center opacity-[0.02] pointer-events-none">
-        <h2 className="text-[30vw] font-serif leading-none tracking-tighter">MUSIC</h2>
+        <h2 className="text-[40vw] md:text-[30vw] font-serif leading-none tracking-tighter">MUSIC</h2>
       </div>
 
       <div className="max-w-6xl w-full relative z-10 flex flex-col items-center">
         
-        <h2 className="text-[10px] font-bold uppercase tracking-[0.8em] text-gray-500 mb-24 flex items-center gap-4">
-          <span className="w-12 h-px bg-gray-800"></span>
+        <h2 className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.5em] md:tracking-[0.8em] text-gray-500 mb-16 md:mb-24 flex items-center gap-4 text-center">
+          <span className="w-8 md:w-12 h-px bg-gray-800 hidden sm:block"></span>
           Audio Visual Experience
+          <span className="w-8 md:w-12 h-px bg-gray-800 hidden sm:block"></span>
         </h2>
 
-        <div className="h-96 flex flex-col items-center justify-center text-center">
+        <div className="h-64 md:h-96 flex flex-col items-center justify-center text-center">
           <AnimatePresence mode="wait">
             <motion.p
               key={currentLyric.text}
@@ -92,31 +93,31 @@ const Expertise = () => {
               animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               exit={{ opacity: 0, filter: "blur(20px)", y: -20 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="font-serif text-5xl md:text-7xl lg:text-9xl leading-tight tracking-tighter italic"
+              className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-9xl leading-tight tracking-tighter italic"
             >
               {currentLyric.text}
             </motion.p>
           </AnimatePresence>
         </div>
 
-        <div className="flex flex-col items-center gap-8 mt-16">
+        <div className="flex flex-col items-center gap-6 md:gap-8 mt-12 md:mt-16">
           <button 
             onClick={togglePlay}
-            className="w-24 h-24 rounded-full border border-gray-800 flex items-center justify-center group hover:bg-white transition-all duration-500"
+            className="w-20 h-20 md:w-24 md:h-24 rounded-full border border-gray-800 flex items-center justify-center group hover:bg-white transition-all duration-500"
           >
             {isPlaying ? (
               <div className="flex gap-2 items-center">
-                <div className="w-1.5 h-8 bg-white group-hover:bg-black"></div>
-                <div className="w-1.5 h-8 bg-white group-hover:bg-black"></div>
+                <div className="w-1 md:w-1.5 h-6 md:h-8 bg-white group-hover:bg-black"></div>
+                <div className="w-1 md:w-1.5 h-6 md:h-8 bg-white group-hover:bg-black"></div>
               </div>
             ) : (
-              <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-2 group-hover:border-l-black"></div>
+              <div className="w-0 h-0 border-t-[10px] md:border-t-[12px] border-t-transparent border-l-[16px] md:border-l-[20px] border-l-white border-b-[10px] md:border-b-[12px] border-b-transparent ml-2 group-hover:border-l-black"></div>
             )}
           </button>
           
           <div className="flex flex-col items-center gap-4">
-            <p className="font-sans text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400">Sailor Song &mdash; Gigi Perez</p>
-            <div className="w-64 h-px bg-gray-900 relative">
+            <p className="font-sans text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] md:tracking-[0.5em] text-gray-400 text-center">Sailor Song &mdash; Gigi Perez</p>
+            <div className="w-48 md:w-64 h-px bg-gray-900 relative">
               <motion.div 
                 className="absolute inset-0 bg-white origin-left"
                 style={{ scaleX: audioRef.current && audioRef.current.duration ? audioRef.current.currentTime / audioRef.current.duration : 0 }}
